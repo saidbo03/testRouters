@@ -10,5 +10,5 @@ export default defineConfig({
       },
     }),
   ],
-  base:"/testRouters"
+  base:"/testUsers"
 })

@@ -1,0 +1,87 @@
+/* 1. تنسيق الحاوية الكبيرة التي تحمل كل البطاقات */
+.users {
+  display: flex;
+  flex-wrap: wrap; /* يسمح للبطاقات بالنزول للسطر التالي إذا لم يكف العرض */
+  justify-content: center; /* لتوسط البطاقات في وسط الشاشة */
+  gap: 30px; /* المسافة بين كل بطاقة وأخرى */
+  padding: 50px;
+  background-color: #f0f2f5; /* لون خلفية الصفحة كاملة (رمادي فاتح جداً) ليبرز اللون الأبيض للبطاقات */
+}
+
+/* 2. تنسيق البطاقة الفردية */
+.user {
+  background-color: white;
+  width: 280px; /* عرض ثابت للبطاقة */
+  padding: 30px 20px;
+  border-radius: 12px; /* حواف ناعمة */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05); /* ظل ناعم واحترافي */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* مهم إذا أردت إضافة عناصر عائمة لاحقاً */
+}
+
+/* تأثير عند تحريك الماوس فوق البطاقة */
+.user:hover {
+  transform: translateY(-10px); /* ترتفع البطاقة قليلاً للأعلى */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الصورة */
+.user img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff; /* إطار أبيض حول الصورة */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* ظل للصورة نفسها */
+  margin-bottom: 15px;
+}
+
+/* الاسم */
+.user h2 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+/* النصوص الفرعية */
+.user p {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+.role{
+  color:#a3a3a3;
+}
+
+/* الخط الفاصل */
+.user hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  margin: 20px 0;
+}
+
+/* الزر */
+.user a {
+  background: transparent;
+  border: 2px solid #e0e0e0; /* إطار خفيف */
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration:none;
+}
+
+.user a:hover {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+}

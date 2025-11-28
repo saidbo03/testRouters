@@ -5,7 +5,7 @@ function About() {
   return (
     <div className='container_about'>
         <p className="about">
-  Our mission is to make quality education accessible to everyone, everywhere. We believe that learning should be an engaging and lifelong journey. By connecting passionate learners with industry-leading experts, we create an environment where creativity thrives and goals are achieved. Join thousands of students who are already transforming their futures with us.
+        Welcome to my User Directory project. This website allows you to explore detailed user profiles in a clean and organized interface. It was created to showcase how modern web applications handle data fetching and display. You can browse users, view their contact details, and see their professional information instantly.
 </p>
     </div>
   )

@@ -5,25 +5,29 @@ import { FaChalkboardTeacher } from "react-icons/fa";
 import "./App.css";
 import Home from "./components/home/home.jsx";
 import About from "./components/About/About.jsx";
+import UserInfo from "./components/UserInfo/UserInfo.jsx";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <div className="header">
-          <p><FaChalkboardTeacher /> STAFED AM3LM</p>
+          <p>
+            <FaChalkboardTeacher />
+          </p>
           <ul>
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/testUsers/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/about"}>About</Link>
+              <Link to={"/testUsers/about"}>About</Link>
             </li>
           </ul>
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/testUsers/" element={<Home />} />
+          <Route path="/testUsers/about" element={<About />} />
+          <Route path="/testUsers/user/:id" element={<UserInfo />} />
         </Routes>
       </BrowserRouter>
     </>

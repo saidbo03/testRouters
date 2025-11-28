@@ -1,54 +1,41 @@
-import React from "react";
-import Card from "../Card/Card";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import "./home.css";
 
 function Home() {
-    const lessonsData = [
-        {
-          id: 1,
-          title: "Introduction to the Course",
-          description: "A comprehensive introduction to the course goals and an overview of the tools we will be using.",
-          thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500",
-          duration: "05:30",
-          videoUrl: "https://www.youtube.com/watch?v=xyz123",
-          isCompleted: true,
-        },
-        {
-          id: 2,
-          title: "Understanding the Basics",
-          description: "Explaining the fundamental concepts and necessary rules to build a strong knowledge base.",
-          thumbnail: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500",
-          duration: "12:45",
-          videoUrl: "https://www.youtube.com/watch?v=abc456",
-          isCompleted: false,
-        },
-        {
-          id: 3,
-          title: "Advanced Techniques",
-          description: "Learn advanced techniques and professional methods to solve complex problems efficiently.",
-          thumbnail: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=500",
-          duration: "20:10",
-          videoUrl: "https://www.youtube.com/watch?v=def789",
-          isCompleted: false,
-        }
-      ];
-      
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    // 1. تعريف دالة لجلب البيانات داخل useEffect
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get("https://dummyjson.com/users");
+        // تأكدنا من البيانات قبل وضعها في الـ State
+        setUsers(res.data.users.slice(0, 15));
+      } catch (err) {
+        console.log("Error fetching data:", err);
+      }
+    };
+
+    fetchUsers();
+  }, []); // <--- 3. المصفوفة الفارغة مهمة جداً لتجنب التكرار اللانهائي
+
+  console.log(users);
+
   return (
-    <div className="container">
-        <h1 className="title">Courses:</h1>
-        <div className="home-page">
-        {lessonsData.map((lesson) => (
-            <Card
-            key={lesson.id}
-            id={lesson.id}
-            title={lesson.title}
-            thumbnail={lesson.thumbnail}
-            duration={lesson.duration}
-            videoUrl={lesson.videoUrl}
-            isCompleted={lesson.isCompleted}
-            description={lesson.description}
-            />
-        ))}
-        </div>
+    <div className="users">
+      {users.map((item) => {
+        return (
+          <div className="user" key={item.id}>
+            <img src={item.image} alt={"image " + item.firstName} />
+            <h2>{item.firstName + " " + item.lastName}</h2>
+            <p>{item.email}</p>
+            <p className="role">{item.role}</p>
+            <hr />
+            <Link to={`/testUsers/user/${item.id}`}>View Profile</Link>
+          </div>
+        );
+      })}
     </div>
   );
 }

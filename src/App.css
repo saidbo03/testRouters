@@ -1,6 +1,10 @@
 body{
   padding: 0;
   margin: 0;
+
+}
+#root{
+  position: relative;
 }
 .header p {
   display: flex;
@@ -15,7 +19,7 @@ body{
 
 /* تلوين الأيقونة فقط بلون مميز */
 .header p svg {
-  color: #61dafb; /* نفس اللون المستخدم سابقاً في التصميم */
+  color: #00db80; /* نفس اللون المستخدم سابقاً في التصميم */
   font-size: 1.8rem;
 }
 
@@ -29,6 +33,10 @@ body{
   background-color: #20232a;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top:0;
+  left: 0;
+  z-index: 3;
 }
 
 .header svg {
@@ -52,83 +60,5 @@ body{
 }
 
 .header ul li a:hover {
-  color: #61dafb; /* لون أزرق سماوي عند مرور الماوس */
-}
-/* Card Component Styles */
-.card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 1rem;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover; /* يضمن أن الصورة تملأ المساحة دون تشويه */
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  margin: 0;
-  padding: 1rem 1rem 0.5rem 1rem;
-  color: #333;
-}
-
-/* يستهدف الفقرة الأولى (الوصف) */
-.card p {
-  font-size: 0.9rem;
-  color: #666;
-  flex-grow: 1; /* يدفع مدة الفيديو إلى الأسفل */
-  line-height: 1.4;
-  text-align: center;
-}
-
-/* يستهدف الفقرة الأخيرة (مدة الفيديو) */
-.details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #333;
-  background-color: #f7f7f7;
-}
-
-/* Container for the cards */
-.home-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1rem;
-}
-.title {
-  font-size: 2rem;
-  color: #111827;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 10px;
-}
-.container {
-  margin: 0 auto;
-  padding: 0px 20px;
-  background-color: #f9fafb; /* لون خلفية للصفحة */
-}
-.details p:first-child {
-  color: #10b981; /* لون أخضر لكلمة Completed */
-}
-
-.details p:last-child {
-  color: #6366f1; /* لون أزرق للمدة */
+  color: #00db80; /* لون أزرق سماوي عند مرور الماوس */
 }
