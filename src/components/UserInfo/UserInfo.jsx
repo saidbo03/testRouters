@@ -3,17 +3,13 @@ import './UserInfo.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-function UserInfo() {
-  // 1. تصحيح: يجب وضع الأقواس {} لاستخراج الـ id لأن useParams تعيد كائناً
+export default function UserInfo() {
   const { id } = useParams(); 
-  
-  // سنبدأ بـ null لنعرف هل تم جلب البيانات أم لا
   const [user, setUser] = useState(null); 
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        // تأكد أن الـ id صحيح
         const res = await axios.get(`https://dummyjson.com/users/${id}`);
         setUser(res.data);
       } catch (err) {
@@ -24,13 +20,7 @@ function UserInfo() {
     if (id) {
         fetchUser();
     }
-  }, [id]); // أضفنا id هنا ليعيد الجلب إذا تغير المستخدم
-
-  // 2. تصحيح: إذا لم يتم جلب البيانات بعد (user ما زال null)، اعرض رسالة تحميل
-  // هذا يمنع الخطأ لأننا لن نحاول قراءة user.company قبل وصول البيانات
-  if (!user) {
-    return <div style={{textAlign: 'center', marginTop: '50px'}}>Loading...</div>;
-  }
+  }, [id]); 
 
   return (
     <div className="container">
@@ -55,9 +45,6 @@ function UserInfo() {
             </div>
             <div className="info-item">
                 <span className="label">Location:</span>
-                {/* استخدمنا العلامة ؟ (Optional Chaining) كحماية إضافية 
-                   بمعنى: لو company موجودة، هات address، وإلا توقف ولا تظهر خطأ
-                */}
                 <span className="value">
                     {user.company?.address?.city}, {user.company?.address?.country}
                 </span>
@@ -71,5 +58,3 @@ function UserInfo() {
     </div>
   );
 };
-
-export default UserInfo;
