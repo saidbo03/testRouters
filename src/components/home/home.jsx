@@ -3,14 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./home.css";
 
-function Home() {
+export default function Home() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    // 1. تعريف دالة لجلب البيانات داخل useEffect
     const fetchUsers = async () => {
       try {
         const res = await axios.get("https://dummyjson.com/users");
-        // تأكدنا من البيانات قبل وضعها في الـ State
         setUsers(res.data.users.slice(0, 15));
       } catch (err) {
         console.log("Error fetching data:", err);
@@ -18,7 +16,7 @@ function Home() {
     };
 
     fetchUsers();
-  }, []); // <--- 3. المصفوفة الفارغة مهمة جداً لتجنب التكرار اللانهائي
+  }, []); 
 
   console.log(users);
 
@@ -39,5 +37,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;
