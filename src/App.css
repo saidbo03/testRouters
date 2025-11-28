@@ -9,22 +9,20 @@ body{
 .header p {
   display: flex;
   align-items: center;
-  gap: 10px; /* مسافة بين الأيقونة والنص */
+  gap: 10px; 
   font-size: 1.5rem;
-  font-weight: 800; /* خط عريض */
+  font-weight: 800; 
   color: #61dafb;
   margin: 0;
   cursor: pointer;
 }
 
-/* تلوين الأيقونة فقط بلون مميز */
 .header p svg {
-  color: #00db80; /* نفس اللون المستخدم سابقاً في التصميم */
+  color: #00db80; 
   font-size: 1.8rem;
 }
 
 
-/* jj */
 .header {
   display: flex;
   align-items: center;
@@ -40,7 +38,7 @@ body{
 }
 
 .header svg {
-  font-size: 2rem; /* يكبر حجم الأيقونة */
+  font-size: 2rem; 
 }
 
 .header ul {
@@ -48,7 +46,7 @@ body{
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 25px; /* يضيف مسافة بين الروابط */
+  gap: 25px; 
 }
 
 .header ul li a {
@@ -60,5 +58,5 @@ body{
 }
 
 .header ul li a:hover {
-  color: #00db80; /* لون أزرق سماوي عند مرور الماوس */
+  color: #00db80; 
 }
