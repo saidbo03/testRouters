@@ -1,19 +1,16 @@
-/* الحاوية الرئيسية */
+
 .container_about {
     display: flex;
-    justify-content: center; /* توسيط المحتوى أفقياً */
+    justify-content: center;
     align-items: center;
-    padding: 60px 20px; /* مساحة داخلية مريحة */
+    padding: 60px 20px; 
   }
-  
-  /* تنسيق الفقرة */
+
   .about {
-    font-size: 1.125rem; /* حجم خط متوسط (حوالي 18px) */
-    line-height: 1.8; /* تباعد الأسطر لجعل القراءة مريحة */
-    color: #4b5563; /* رمادي داكن (أفضل للعين من الأسود الصرف #000) */
-    text-align: center; /* محاذاة النص في الوسط */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* خط نظيف */
+    font-size: 1.125rem; 
+    line-height: 1.8; 
+    color: #4b5563; 
+    text-align: center; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     
-    /* لمسة إضافية اختيارية (Shadow خفيف) */
-    /* text-shadow: 0 1px 2px rgba(0,0,0,0.05); */
   }
