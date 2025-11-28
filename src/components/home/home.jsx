@@ -32,7 +32,7 @@ function Home() {
             <p>{item.email}</p>
             <p className="role">{item.role}</p>
             <hr />
-            <Link to={`/testUsers/user/${item.id}`}>View Profile</Link>
+            <Link to={`/testRouters/user/${item.id}`}>View Profile</Link>
           </div>
         );
       })}

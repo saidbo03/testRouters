@@ -17,17 +17,17 @@ function App() {
           </p>
           <ul>
             <li>
-              <Link to={"/testUsers/"}>Home</Link>
+              <Link to={"/testRouters/"}>Home</Link>
             </li>
             <li>
-              <Link to={"/testUsers/about"}>About</Link>
+              <Link to={"/testRouters/about"}>About</Link>
             </li>
           </ul>
         </div>
         <Routes>
-          <Route path="/testUsers/" element={<Home />} />
-          <Route path="/testUsers/about" element={<About />} />
-          <Route path="/testUsers/user/:id" element={<UserInfo />} />
+          <Route path="/testRouters/" element={<Home />} />
+          <Route path="/testRouters/about" element={<About />} />
+          <Route path="/testRouters/user/:id" element={<UserInfo />} />
         </Routes>
       </BrowserRouter>
     </>
